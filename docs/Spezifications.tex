@@ -1,0 +1,62 @@
+\documentclass[parskip=full]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\title{Project Ethos : Spezifications}
+\author{NouCake}
+\setlist[itemize]{noitemsep}
+
+\begin{document}
+
+\maketitle
+
+\section{What is Ethos?}
+Project Ethos is a fast-paced multyplayer game for up to 4 player. The player will battle each other for a final winner.
+
+\section{Main Target}
+The main target is to create a shortwhile and fun experience for the player. Its not to ment to be competitive.
+
+\section{User}
+A fun game for all Users.
+
+Targetgroup: User of all ages.\newline 
+Platform: Desktop-Pc, Mobile Devices.
+
+\newpage
+\section{Functional Conditions}
+\subsection{Server}
+A Server is a Object that manages all connections between Server and Client.
+\begin{itemize}
+	\item managing clients
+	\item managing connections
+	\item passes relevant data to GameServer
+\end{itemize}
+
+\subsection{GameServer}
+Manages relevant data for the game.
+\begin{itemize}
+	\item managing entitys
+	\item managing Physics
+	\item managing Input
+	\item responsible for provoding all neccessary information for entitys
+	\item updates entitys
+	\item updates physics
+	\item updates input
+	\item validating incoming packages
+\end{itemize}
+
+\subsection{Physics}
+Managing all physics relevant data and responsible for all physical calculations
+\begin{itemize}
+	\item calculates all physics
+	\item calculates collision and informs colliding entitys
+	\item does not save any data about entitys
+\end{itemize}
+\section{Ablauf} %Maybe Flow is a good name?
+User starts game, everything is nice. Like Bob Ross did it.
+
+
+\end{document}
