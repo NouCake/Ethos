@@ -6,7 +6,6 @@ const fs = require('fs');
 const app = express();
 
 const clientPath = __dirname + '/../';
-console.log(clientPath);
 const port = 12100;
 
 app.use(express.static(clientPath));
@@ -24,5 +23,7 @@ httpServer.listen(port, () => {
 });
 
 const Server = require('./src/js/server.js');
+const GameServer = require('./src/js/gameserver');
+
 const server = new Server(ioserver);
 //setInterval(game.update.bind(game), 1000/25);

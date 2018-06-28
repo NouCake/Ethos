@@ -1,8 +1,11 @@
+console.log("class Server loaded");
+
 class Server{
     constructor(ioserver){
         this.connectedClients = [];
         this.ioserver = ioserver;
-
+        this.game = new GameServer(this);
+        
     }
 
     onConnect(socket){
@@ -10,13 +13,15 @@ class Server{
         this._addClient(socket);
         socket.on('error', this.onError);
         socket.on('disconnect', this.onDisconnect);
+
+        game.clientConnected(socket.id);
     }
 
     onDisconnect(socket){
 
     }
 
-    onReceivePackage(package){
+    onReceivePackage(packet){
 
     }
 
