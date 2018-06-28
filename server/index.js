@@ -22,8 +22,7 @@ httpServer.listen(port, () => {
     console.log('Server listens on port '+ port);
 });
 
-const Server = require('./src/js/server.js');
-const GameServer = require('./src/js/gameserver');
-
-const server = new Server(ioserver);
-//setInterval(game.update.bind(game), 1000/25);
+Server = require('./src/js/server.js');
+GameServer = require('./src/js/gameserver');
+EVENTS = require('../bin/events');
+server = new Server(ioserver);

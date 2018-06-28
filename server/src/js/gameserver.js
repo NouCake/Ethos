@@ -11,7 +11,7 @@ class GameServer{
     }
 
     clientConnected(id){
-
+        this.log(id + ' | connected to GameServer')
     }
 
     clientDisconnected(id){
@@ -19,11 +19,15 @@ class GameServer{
     }
 
     update(deltaTime){
-        console.log(deltaTime);
+        //console.log(deltaTime);
     }
 
     validatePackage(){
 
+    }
+
+    log(message){
+        console.log(message);
     }
 }
 

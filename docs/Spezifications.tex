@@ -58,5 +58,22 @@ Managing all physics relevant data and responsible for all physical calculations
 \section{Ablauf} %Maybe Flow is a good name?
 User starts game, everything is nice. Like Bob Ross did it.
 
+\subsection{Server}
+\begin{itemize}
+	\item Server gets booted
+	\item Server waits for enough player to connect
+	\item as soon as a lobby gets started Server creates a GameServer
+	\item GameServers starts and loads a map
+	\item GameServer loads all connected player into map
+\end{itemize}
+
+
+\subsection{Client}
+\begin{itemize}
+	\item User starts Client
+	\item Client displays a connection screen
+	\item Client connects to Server
+	\item After successful connection Client show GameState
+\end{itemize}
 
 \end{document}

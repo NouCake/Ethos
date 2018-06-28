@@ -5,16 +5,17 @@ class Server{
         this.connectedClients = [];
         this.ioserver = ioserver;
         this.game = new GameServer(this);
-        
+        this._initConnectionMethods();
     }
 
     onConnect(socket){
-        console.log(socket.id + ' | connected');
+        console.log(socket.id + ' | connected to Server');
         this._addClient(socket);
         socket.on('error', this.onError);
         socket.on('disconnect', this.onDisconnect);
+        socket.on('message', console.log)
 
-        game.clientConnected(socket.id);
+        this.game.clientConnected(socket.id);
     }
 
     onDisconnect(socket){
@@ -24,13 +25,13 @@ class Server{
     onReceivePackage(packet){
 
     }
-
+    
     onError(error){
         console.log('PLS HELP\n'+error);
     }
 
     _addClient(socket){
-        this.connectedClients.add(socket);
+        this.connectedClients.push(socket);
     }
 
     _initConnectionMethods(){

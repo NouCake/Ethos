@@ -1,0 +1,5 @@
+EVENTS = {
+    
+}
+
+//module.exports = EVENTS;
