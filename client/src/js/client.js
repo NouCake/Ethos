@@ -12,6 +12,9 @@ class Client{
         this.id = this.server.id;
         
         this.server.on('connect', this.connected.bind(this));
+        for(event in EVENTS){
+            this.server.on(event, this.gameClient.receivePackage.bind(this.gameClient));
+        }
     }
 
     connected(){

@@ -18,6 +18,20 @@ class GameClient{
     clientConnected(){
         this.phaser.state.start(StateGame.name);
     }
+
+    receivePackage(packet){
+        if(packet.event == EVENTS.ENTITYDATA){
+
+            if(this.state.name == StateGame.name){
+                this.state.updateEntitys(packet.data);
+            } else {
+                console.log("currently unable to update entitys");
+            }
+
+        } else {
+            console.log("unknown event")
+        }
+    }
 }
 
 let init = function(){

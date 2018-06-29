@@ -24,5 +24,8 @@ httpServer.listen(port, () => {
 
 Server = require('./src/js/server.js');
 GameServer = require('./src/js/gameserver');
+ServerController = require('./src/js/servercontroller');
 EVENTS = require('../bin/events');
+Point = require('../bin/point');
+Entity = require('../bin/entity');
 server = new Server(ioserver);

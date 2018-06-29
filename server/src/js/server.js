@@ -5,6 +5,8 @@ class Server{
         this.connectedClients = [];
         this.ioserver = ioserver;
         this.game = new GameServer(this);
+        this.controller = new ServerController(this, this.game);
+        this.game.setController(this.controller);
         this._initConnectionMethods();
     }
 
