@@ -1,3 +1,5 @@
+const Point = require('./point');
+
 class Entity{
     constructor(id, x, y, type){
         this.id = id;
@@ -35,3 +37,5 @@ class Entity{
         });
     }   
 }
+
+module.exports = Entity;

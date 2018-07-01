@@ -6,3 +6,5 @@ class Package{
         this.time = time;
     }
 }
+
+module.exports = Package;

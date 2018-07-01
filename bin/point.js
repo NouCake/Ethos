@@ -4,3 +4,5 @@ class Point{
         this.y = y;
     }
 }
+
+module.exports = Point;

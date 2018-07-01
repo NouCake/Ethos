@@ -3,10 +3,11 @@ class StateGame{
         this.gameClient = gameClient;
         this.phaser = gameClient.phaser;
         this.entitys = [];
+        this.name = StateGame.name;
     }
 
     preload(){
-        this.phaser.load.sprite('default', 'src/assets/default.png');
+        this.phaser.load.image('default', 'src/assets/default.png');
     }
 
     create(){
@@ -17,8 +18,9 @@ class StateGame{
         if(this.entitys[entityData.id]){
             console.log("error");
         } else {
-            sprite = this.phaser.add.sprite(entityData.pos.x, entityData.pos.y, entityData.key)
+            let sprite = this.phaser.add.image(entityData.pos.x, entityData.pos.y, entityData.key)
             this.entitys[entityData.id] = sprite;
+            console.log('entity added');
         }
     }
 
@@ -26,10 +28,15 @@ class StateGame{
 
     }
 
-    updateEntitys(entityData){
-        for(entity in EntityData){
-            if(this.entitys[entity.id]){
-                this.addEntity(entity);
+    updateEntitys(entityDatas){
+        for(let i in entityDatas){
+            let data = entityDatas[i];
+            if(!this.entitys[data.id]){
+                this.addEntity(data);
+            } else {
+                let entity = this.entitys[data.id];
+                entity.x = data.pos.x;
+                entity.y = data.pos.y;
             }
         }
     }

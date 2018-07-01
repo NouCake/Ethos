@@ -1,4 +1,5 @@
-console.log("class Server loaded");
+const GameServer = require('./gameserver');
+const ServerController = require('./servercontroller');
 
 class Server{
     constructor(ioserver){
@@ -41,6 +42,20 @@ class Server{
         this.ioserver.on('error', this.onError.bind(this));
     }
 
+    sendPackage(socket, packet){
+        socket.emit(packet.event, packet);
+    }
+
+    getSocket(id){
+        let sockets = this.connectedClients.filter(socket => id == socket.id);
+        if(sockets.length > 1){
+            this.server.onError();
+        } else if (sockets.length == 0){
+            this.server.onError('socket not found')
+        } else {
+            return sockets[0];
+        }
+    }
 
 }
 

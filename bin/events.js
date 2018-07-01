@@ -1,5 +1,5 @@
-EVENTS = {
+const EVENTS = {
     ENTITYDATA: 'entity'
 }
 
-//module.exports = EVENTS;
+module.exports = EVENTS;

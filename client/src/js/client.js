@@ -13,7 +13,7 @@ class Client{
         
         this.server.on('connect', this.connected.bind(this));
         for(event in EVENTS){
-            this.server.on(event, this.gameClient.receivePackage.bind(this.gameClient));
+            this.server.on(EVENTS[event], this.gameClient.receivePackage.bind(this.gameClient));
         }
     }
 
@@ -36,8 +36,6 @@ class Client{
     sendPackage(event, data){
         let packet = new Package(this.id, event, this.getServerTime(), data)
         this.server.emit(packet.event, packet);
-        console.log(packet.event);
-        console.log(packet);
     }
 
     getServerTime(){

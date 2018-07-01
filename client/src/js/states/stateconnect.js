@@ -2,6 +2,7 @@ class StateConnect{
     constructor(gameClient){
         this.gameClient = gameClient;
         this.phaser = gameClient.phaser;
+        this.name = StateConnect.name;
     }
 
     preload(){

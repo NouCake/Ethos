@@ -1,3 +1,6 @@
+const EVENTS = require('../../../bin/events');
+const Package = require('../../../bin/package');
+
 class ServerController{
     
     constructor(server, gameServer){
@@ -9,10 +12,14 @@ class ServerController{
 
     }
 
-    updateClients(){
-        entityData = gameServer.entitys.map(this._getEntityData);
-        server.connectedClients.forEach(socket => {
-            socket.emit(EVENTS.ENTITYDATA, entityData);
+    updateClients(entityData){
+        let data = [];
+        for(let i in entityData){
+            data.push(this._getEntityData(entityData[i]));
+        }
+        let packet = new Package(this.gameServer.id, EVENTS.ENTITYDATA, this.gameServer.getTime(), data);
+        this.gameServer.connectedPlayer.forEach(player => {
+            this.server.sendPackage(this.server.getSocket(player.id), packet);
         })
     }
 

@@ -1,4 +1,6 @@
-console.log("class GameServer loaded")
+const Entity = require('../../../bin/entity');
+
+console.log(Entity);
 class GameServer{
     constructor(server){
         this.server = server;
@@ -33,6 +35,7 @@ class GameServer{
 
     clientConnected(id){
         this.log(id + ' | connected to GameServer')
+        this.connectedPlayer.push({id:id});
     }
 
     clientDisconnected(id){
@@ -40,7 +43,7 @@ class GameServer{
     }
 
     update(deltaTime){
-        this.controller.updateClients();
+        this.controller.updateClients(this.entitys);
     }
 
     validatePackage(){
@@ -49,6 +52,13 @@ class GameServer{
 
     log(message){
         console.log(message);
+    }
+
+    /**
+     * TODO
+     */
+    getTime(){
+        return -1;
     }
 }
 

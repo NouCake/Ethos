@@ -1,3 +1,5 @@
+"use strict";
+
 const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
@@ -22,10 +24,8 @@ httpServer.listen(port, () => {
     console.log('Server listens on port '+ port);
 });
 
-Server = require('./src/js/server.js');
-GameServer = require('./src/js/gameserver');
-ServerController = require('./src/js/servercontroller');
-EVENTS = require('../bin/events');
-Point = require('../bin/point');
-Entity = require('../bin/entity');
-server = new Server(ioserver);
+const Server =  require('./src/js/server.js');
+const ServerController = require('./src/js/servercontroller');
+const EVENTS = require('../bin/events');
+const Point = require('../bin/point');
+const server = new Server(ioserver);
