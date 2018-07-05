@@ -64,7 +64,7 @@ User starts game, everything is nice. Like Bob Ross did it.
 	\item Server waits for enough player to connect
 	\item as soon as a lobby gets started Server creates a GameServer
 	\item GameServers starts and loads a map
-	\item GameServer loads all connected player into map
+	\item GameServer loads UiOall connected player into map
 \end{itemize}
 
 
@@ -75,5 +75,26 @@ User starts game, everything is nice. Like Bob Ross did it.
 	\item Client connects to Server
 	\item After successful connection Client show GameState
 \end{itemize}
+
+\subsubsection{Timing}
+Server starts and inits gameserver
+(t=0)gameserver sets the time=0 at init and updates it 
+(a function getTime that calculates current time)\newline
+(t=1200)client logs in and requests welcome package\newline
+(t=1200)server send current time(t=1200) to client (with 30ms delay)\newline
+(t=1230)client receives currentTime(1200) and saves it for server communication (pos 1)\newline
+(t=1300)client updates its state, loggs his old state(t=12700, pos1) and sends input data to server(time = 1270)\newline
+(t=1300)server updates state and sends pos data to client(t=1300, pos = 1)\newline
+(t=1330)server receives client package and sets input of player(t=1270)\newline
+(t=1330)(cT=1300)client receives pos data from server(t=1300, pos 1) and compares it to logged data(t=1270, pos=1)
+
+
+
+
+\subsubsection{Recieving Data}
+The client receives data in realtime. This data contains:
+EntityData
+The client updates its state with the entity data.
+data for the player that belogns to the client will checks if the 
 
 \end{document}

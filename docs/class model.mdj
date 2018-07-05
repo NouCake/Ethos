@@ -3160,13 +3160,30 @@
 											"height": 13,
 											"text": "+getMagnitude(): float",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFkWpJS8rTJuDY=",
+											"_parent": {
+												"$ref": "AAAAAAFkPiZi8X1lK/g="
+											},
+											"model": {
+												"$ref": "AAAAAAFkWpJSmbS6HNA="
+											},
+											"font": "Arial;13;0",
+											"left": 605,
+											"top": 803,
+											"width": 126.826171875,
+											"height": 13,
+											"text": "+set(x, y)",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 600,
 									"top": 783,
 									"width": 136.826171875,
-									"height": 23
+									"height": 38
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -3206,7 +3223,7 @@
 							"left": 600,
 							"top": 720,
 							"width": 136.826171875,
-							"height": 86,
+							"height": 101,
 							"nameCompartment": {
 								"$ref": "AAAAAAFkPiZi8X1fonM="
 							},
@@ -7249,6 +7266,34 @@
 									"direction": "return"
 								}
 							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFkWpJSmbS6HNA=",
+							"_parent": {
+								"$ref": "AAAAAAFkPiZi8X1cgEw="
+							},
+							"name": "set",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFkWpJ+k7WZHD8=",
+									"_parent": {
+										"$ref": "AAAAAAFkWpJSmbS6HNA="
+									},
+									"name": "x",
+									"type": ""
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFkWpJ+lLWasak=",
+									"_parent": {
+										"$ref": "AAAAAAFkWpJSmbS6HNA="
+									},
+									"name": "y",
+									"type": ""
+								}
+							]
 						}
 					]
 				},
@@ -7492,7 +7537,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFkSH3Q+Md7pRo="
 									},
-									"name": "entityData[]"
+									"name": "entityData[]",
+									"type": ""
 								}
 							]
 						},
